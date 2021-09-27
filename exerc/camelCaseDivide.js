@@ -1,8 +1,17 @@
+
+// --------------first way--------------------
 const wordCamelCase = 'wilmerIvánLópezCarrera'
-
-// ----------------------------------------------------
-
 const wordStrOfArray = wordCamelCase.split('')
+const changeArray = wordStrOfArray.map((element) => {
+  if (element === element.toUpperCase()) {
+    return ' ' + element
+  }
+  return element
+})
+const newStr = changeArray.join('')
+
+// --------------------Second way----------------------------
+
 let newStrWord = ''
 for (let i = 0; i < wordStrOfArray.length; i++) {
   if (wordStrOfArray[i] === wordStrOfArray[i].toUpperCase()) {
@@ -11,17 +20,7 @@ for (let i = 0; i < wordStrOfArray.length; i++) {
     newStrWord += wordStrOfArray[i]
   }
 }
-// ----------------------------------------------------------------------
-const changeArray = wordStrOfArray.map((element) => {
-  if (element === element.toUpperCase()) {
-    return ' ' + element
-  }
-  return element
-})
-
-const joinArray = changeArray.join('')
-
-// -----------------------------------------------------------------------------
+// ----------------third way ---------------------------------------
 
 let subWord3 = ''
 for (let i = 0; i < wordCamelCase.length; i++) {
@@ -32,4 +31,4 @@ for (let i = 0; i < wordCamelCase.length; i++) {
   }
 }
 
-module.exports = { wordCamelCase, wordStrOfArray, changeArray, subWord3, newStrWord, joinArray }
+module.exports = { wordCamelCase, newStr, subWord3, newStrWord }
