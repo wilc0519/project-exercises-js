@@ -13,13 +13,14 @@ const newStr = changeArray.join('')
 // --------------------Second way----------------------------
 
 let newStrWord = ''
-for (let i = 0; i < wordStrOfArray.length; i++) {
-  if (wordStrOfArray[i] === wordStrOfArray[i].toUpperCase()) {
-    newStrWord = newStrWord + ' ' + wordStrOfArray[i]
+const funcForEach = wordStrOfArray.forEach((element) => {
+  if (element === element.toUpperCase()) {
+    newStrWord = newStrWord + ' ' + element
   } else {
-    newStrWord += wordStrOfArray[i]
+    newStrWord += element
   }
-}
+})
+
 // ----------------third way ---------------------------------------
 
 let subWord3 = ''
@@ -31,4 +32,4 @@ for (let i = 0; i < wordCamelCase.length; i++) {
   }
 }
 
-module.exports = { wordCamelCase, newStr, subWord3, newStrWord }
+module.exports = { wordCamelCase, newStr, subWord3, newStrWord, funcForEach }
